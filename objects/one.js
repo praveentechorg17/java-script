@@ -752,3 +752,7 @@ let users=[{ "id": 1, "name": "Delmore", "email": "dsatyford0@netvibes.com", "ge
 for(let i=0; i<=users.length-1; i++){
 console.log(users[i].gender)
 } */
+
+for(user of users){
+console.log(user.id)
+}
