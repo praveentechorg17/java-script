@@ -755,4 +755,6 @@ console.log(users[i].gender)
 
 for(user of users){
 console.log(user.id)
+console.log(user.name)
+delete users.id
 }
