@@ -753,8 +753,13 @@ for(let i=0; i<=users.length-1; i++){
 console.log(users[i].gender)
 } */
 
-for(user of users){
+/* for(user of users){
 console.log(user.id)
 console.log(user.name)
 delete users.id
-}
+} */
+
+/* for( key in users){
+    console.log(users[key])
+
+} */
