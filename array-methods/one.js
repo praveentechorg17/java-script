@@ -29,6 +29,7 @@
 // let a=[10,20,30,40]
 // console.log(a)
 // let removed_ele=a.pop()
+
 // a.shift()
 // console.log(a)
 // console.log(removed_ele)
