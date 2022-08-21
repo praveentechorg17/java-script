@@ -1,13 +1,13 @@
-// // let employees=[{ id:101, name:"praveen"}, { id:102,}]
-// // let marks=[]
-// /* if(employees.length){
-//     console.log("not empty object")
+let employees=[{ id:101, name:"praveen"}, { id:102,}]
+let marks=[]
+if (employees.length){
+    console.log(" not empty object")
 
-// }
-// else{
-//     console.log("emptpy object")
-// } */
-// // marks.length>0 ? console.log("not empty") : console.log("empty")
+}
+else{
+    console.log("  emptpy object")
+} 
+// marks.length>0 ? console.log("not empty") : console.log("empty")
 
 // let a=[10,20,30,40]
 // console.log(a)
