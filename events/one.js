@@ -15,4 +15,5 @@ function myfunction(){
 var xyz=document.getElementById("ab")
 xyz.value=xyz.value.toUpperCase()
 
+
 }
