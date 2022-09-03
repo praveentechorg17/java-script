@@ -1,0 +1,108 @@
+<html>
+    <head>
+<title>calculator</title>
+<!--using css -->
+        <style>
+            input[type=button]{
+                background-color: white;
+                color: #1616a5;
+                width: 65px;
+                height: 60px;
+                font-size: 15px;
+                text-align: center;
+                box-sizing:inherit;
+                
+            }
+            input:hover{
+                background-color: rgb(136, 204, 215);
+            }
+            input:active{
+                background-color: rgb(85, 75, 81);
+            }
+            button{
+                background-color:aqua;
+                color:#ee82ee ;
+                width: 80px;
+                height: 80px;
+                font-size: 10px;
+                box-sizing: border-box;
+                border-radius: 1 1 1 1;
+            }
+            .container{
+                position:absolute;
+                left:40%;
+                top:20%;
+                border-radius:10px 0;
+                transform: translate(-50% -50%);
+                background: rgb(71, 101, 94);
+                box-shadow: rgba(33, 97, 193, 0.4);
+                display: flex;
+                justify-content: center;
+
+            }
+            h3 {
+                text-align: center;
+                color:#1616a5;
+                position: relative;
+                top: 50px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <h3>Calculator</h3>
+        <div class="container">
+            <!--using table tags-->
+        <table class="table table hover">
+            <tr>
+              <td colspan="2"><input type="text"  id="result" /></td>
+              <!-- taking Id(result) hole scripting function-->
+              <td><input type="button" value="%" onclick="gopi('%')"/></td>
+                <td><input type="button" value="*" onclick="gopi('*')"/></td>
+               
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="gopi('1')"/></td>
+                <td><input type="button" value="2" onclick="gopi('2')"/></td>
+                <td><input type="button" value="3" onclick="gopi('3')"/></td>
+                <td><input type="button" value="/" onclick="gopi('/')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="gopi('4')"/></td>
+                <td><input type="button" value="5" onclick="gopi('5')"/></td>
+                <td><input type="button" value="6" onclick="gopi('6')"/></td>
+                <td><input type="button" value="-" onclick="gopi('-')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="gopi('7')"/></td>
+                <td><input type="button" value="8" onclick="gopi('8')"/></td>
+                <td><input type="button" value="9" onclick="gopi('9')"/></td>
+                <td><input type="button" value="+" onclick="gopi('+')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="gopi('.')"/></td>
+                <td><input type="button" value="0" onclick="gopi('0')"/></td>
+                <!--equal taking function solve in this case-->
+                <td><input type="button" value="=" onclick="solve()"/></td>
+                <td><input type="button" value="c" onclick="clr()"/></td>
+            </tr>
+        </table>
+        </div>
+        <!--script dom -->
+        <script>
+            function gopi(val){
+                document.getElementById("result").value+=val
+            }
+            function solve(){
+                let x=document.getElementById("result").value
+                let y=eval(x)
+                document.getElementById("result").value=y
+            }
+            function clr() {
+                document.getElementById("result").value=""
+            }
+
+        </script> 
+    </body>
+</html>
