@@ -12,12 +12,12 @@
         <form>
           <div class="form-group">
 
-            <label >first name</label>
+            <label>first name</label>
             <input type="text" class="form-control" id="fname">
           </div>
           <div class="form-group">
 
-            <label >last name</label>
+            <label>last name</label>
             <input type="text" class="form-control" id="lname">
           </div>
           <div class="form-group">
@@ -26,7 +26,7 @@
             <input type="text" class="form-control" id="email">
           </div>
           <div class="form-group">
-            <label >Password</label>
+            <label>Password</label>
             <input type="text" class="form-control" id="password">
           </div>
 
@@ -37,17 +37,21 @@
   </div>
 
   <br>
-  <table border="2">
+  <table class="table table-striped">
     <thead>
       <th>fname</th>
       <th>lname</th>
       <th>email</th>
       <th>password</th>
+      <th>delete</th>
     </thead>
     <tbody></tbody>
   </table>
   <script>
-    var persons = []
+    var persons = JSON.parse(localStorage.getItem("persons"))
+    if(persons==null){
+      persons=[]
+    }
     function getusers() {
       var person = {
         fname: "",
@@ -60,12 +64,13 @@
         person[a] = document.getElementById(a).value
       }
       persons.push(person)
+      localStorage.setItem("persons",JSON.stringify(persons))
       displayallusers()
 
     }
     function displayallusers() {
       document.querySelector("tbody").innerHTML = ""
-      persons.map((person) => {
+      persons.map((person, i) => {
         var myTr = document.createElement("tr")
         for (a in person) {
           var myTd = document.createElement("td")
@@ -73,8 +78,44 @@
           myTr.appendChild(myTd)
         }
 
+        var deltd = document.createElement("td")
+        var delbtn = document.createElement("button")
+        delbtn.innerHTML = "delete"
+        delbtn.setAttribute("onclick", "deleteuser(" + i + ")")
+        delbtn.setAttribute("class", "btn btn-danger")
+        deltd.appendChild(delbtn)
+        myTr.appendChild(deltd)
+
         document.querySelector("tbody").appendChild(myTr)
       })
+
+      // for (i = 0; i <= persons.length; i++) {
+      //   var myTr = document.createElement("tr")
+      //   for (a in persons[i]) {
+      //     var myTd = document.createElement("td")
+      //     myTd.innerHTML = persons[i][a]
+      //     myTr.appendChild(myTd)
+      //   }
+
+      //   var deltd = document.createElement("td")
+      //   var delbtn = document.createElement("button")
+      //   delbtn.innerHTML = "delete"
+      //   delbtn.setAttribute("onclick", "deleteuser(" + i + ")")
+      //   delbtn.setAttribute("class", "btn btn-danger")
+      //   deltd.appendChild(delbtn)
+      //   myTr.appendChild(deltd)
+
+      //   document.querySelector("tbody").appendChild(myTr)
+
+
+      // }
+    }
+    // displayallusers()
+
+    function deleteuser(i) {
+      // console.log(persons[i] + "delete successfully")
+      persons.splice(i, 1)
+      displayallusers()
     }
 
 

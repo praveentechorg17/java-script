@@ -5,5 +5,5 @@ function changecolor(){
 function changecase(){
   let name= document.getElementById("xyz").value
 console.log(name)
-document.getElementById("xyz").value =name.toUpperCase();
+document.getElementById("xyz").value =name.touppercase();
 }
