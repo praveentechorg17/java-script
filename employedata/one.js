@@ -12,15 +12,18 @@
 
 function display_data() {
       let rows = ""
-      users.forEach(lokesh => {
+      users.forEach(user=> {
             rows = rows + `<tr>
-                   <td>${lokesh.id}</td>
-                   <td>${lokesh.first_name.toUpperCase()}</td>
-                   <td>${lokesh.last_name}</td>
-                   <td>${lokesh.email}</td>
-                   <td>${lokesh.gender}</td>
+                   <td>${user.id}</td>
+                   <td>${user.first_name.toUpperCase()}</td>
+                   <td>${user.last_name}</td>
+                   <td>${user.email}</td>
+                   <td>${user.gender}</td>
+
+                   
                             </tr>`
 
       });
+
       document.querySelector("tbody").innerHTML = rows
 }
